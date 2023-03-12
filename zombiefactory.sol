@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
-contract ZombieFactory {
+import "./ownable.sol";
+
+contract ZombieFactory is Ownable {
 
     event NewZombie(uint zombieId, string name, uint dna);
 
@@ -11,6 +13,7 @@ contract ZombieFactory {
     struct Zombie {
         string name;
         uint dna;
+        // Add new data here
     }
 
     Zombie[] public zombies;
@@ -39,4 +42,5 @@ contract ZombieFactory {
     }
 
 }
+
 
